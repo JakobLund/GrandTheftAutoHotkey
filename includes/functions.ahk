@@ -2,11 +2,14 @@
 ; Copyright (C) 2017 MacMailler
 ; GitHub: https://github.com/MacMailler/QuickMacro
 ;
+; Copyright (C) 2021 Jakob Lund
+; GitHub: https://github.com/JakobLund/GrandTheftAutoHotkey
+;
 
 init() {
 	if (WinExist("Grand Theft Auto V")) {
 		hotkeyState := hotkeyState = "On" ? "Off" : "On"
-		Menu, Tray, Tip, QuickMacro`n%hotkeyState%
+		Menu, Tray, Tip, GrandTheftAutoHotkey`n%hotkeyState%
 		setHotkeyState(hotkeyState)
 		
 		if (hotkeyState = "On")
@@ -14,7 +17,7 @@ init() {
 		else
 			Menu, Tray, Rename, Deactivate, Activate
 	} else {
-		msgbox, 0x40, QuickMacro, GTAV is not running!
+		msgbox, 0x40, GrandTheftAutoHotkey, GTAV is not running!
 	}
 }
 	
@@ -23,40 +26,53 @@ setHotkeyState(t) {
 	Hotkey, %PegasusKey%, pegasusLabel, %t%
 	Hotkey, %MechanicKey%, mechanicLabel, %t%
 	Hotkey, %LesterKey%, lesterLabel, %t%
-	Hotkey, %BuzzardKey%, buzzardLabel, %t%
-	Hotkey, %GhostKey%, ghostLabel, %t%
+	Hotkey, %SpawnSparrowKey%, spawnSparrowLabel, %t%
+	Hotkey, %ReturnSparrowKey%, returnSparrowLabel, %t%
+	Hotkey, %SpawnCarKey%, spawnCarLabel, %t%
+	Hotkey, %ReturnCarKey%, returnCarLabel, %t%
 	Hotkey, %ArmorKey%, armorLabel, %t%
 	Hotkey, %SnackKey%, snackLabel, %t%
-	Hotkey, %BullsharkKey%, bullsharkLabel, %t%
 	Hotkey, %AmmoKey%, ammoLabel, %t%
-	Hotkey, %ToggleCeoKey%, toggleCeoLabel, %t%
 	Hotkey, %MorsMutualKey%, morsMutualLabel, %t%
-	Hotkey, %FastHeavyReloadKey%, fastHeavyReloadLabel, %t%
-	Hotkey, %FastEwoKey%, fastEwoLabel, %t%
-	Hotkey, %RepeatButtonKey%, repeatButtonLabel, %t%
-	Hotkey, %CrosshairKey%, crossHairLabel, %t%
 	Hotkey, %OutfitFixKey%, outfitFixLabel, %t%
+	Hotkey, %ToggleCeoKey%, toggleCeoLabel, %t%
+	Hotkey, %ToggleMCKey%, toggleMCLabel, %t%
+	Hotkey, %DisconnectFromLobbyKey%, disconnectFromLobbyLabel, %t%
+
+	
 	
 	T := false
 }
 
 phoneUp() {
-	setkeydelay, %keyPhoneDalay%, %keyPhoneDuration%
+	Setkeydelay, %keyPhoneDelay%, %keyPhoneDuration%
 	Send {Up}
-	sleep, %phoneDelay%
+	Sleep, %phoneDelay%
 }
 
-openM() {
-	setkeydelay, %keyMDelay%, %keyMDuration%
-	Send {SC032}
-	sleep, %menuDelay%
+toggleInteractiveMenu() {
+	Send {%InteractionMKey%}
+
+	if (0 = 1) {
+		Send {Down}
+		Send {Down}
+	} else if (playerState = 1) {
+		Send {Down}
+	}
 }
 
 toggleCeo() {
-	if(playerState = 0)
-		playerState := 1
+	if(CEOState = 0)
+		CEOState := 1
 	else
-		playerState := 0
+		CEOState := 0
+}
+
+toggleMC() {
+	if(MCState = 0)
+		MCState := 1
+	else
+		MCState := 0
 }
 
 callService(s) {
@@ -64,100 +80,100 @@ callService(s) {
 	Send {Right}{Up}{Enter}
 	
 	if(s = "Pegasus")
-		Send {Up 3}{Enter}
+		Send {Up 6}{Enter}
 		
 	else if(s = "MorsMutual")
-		Send {Up 4}{Enter}
+		Send {Up 9}{Enter}
 		
 	else if(s = "Mechanic")
-		Send {Up 6}{Enter}
+		Send {Up 11}{Enter}
 
 	else if(s = "Lester")
-		Send {Up 10}{Enter}
+		Send {Up 15}{Enter}
 }
 
 ceoAbil(a) {
-	if(playerState = 1) {
-		openM()
-		Send {Enter}
-		if(a = "Buzzard")
-			Send {Up 2}{Enter}{Down 4}{Enter}
-
-		else if(a = "Bullshark")
-			Send {Up 3}{Enter}{Down 1}{Enter}
-		
-		else if(a = "Gost")
-			Send {Up 3}{Enter}{Up 3}{Enter}
+	toggleInteractiveMenu()
+	
+	if(a = "RegisterCEO"){
+		Send {Down 6}{Enter}{Enter}
 	}
+	else if(a = "RetireCEO"){
+		Send {Enter}{Up}{Enter}{Enter}
+	}
+	toggleCeo()
 }
+
+mcAbil(a) {
+	toggleInteractiveMenu()
+
+	if(a = "RegisterMC"){
+		Send {Down 7}{Enter}{Enter}
+	}
+	else if(a = "DisbandMC"){
+		Send {Enter}{Up}{Enter}{Enter}
+	}
+	toggleMC()
+}
+
+kosatkaAbil(a) {
+	toggleInteractiveMenu()
+
+	if(a = "SpawnSparrow")
+		Send {Down 5}{Enter}{Up}{Enter}{Down}{Enter}
+	else if(a = "ReturnSparrow")
+		Send {Down 5}{Enter}{Up}{Enter}{Down 3}{Enter}{Up 2}{Enter}
+	
+	toggleInteractiveMenu()
+}
+
+playerAbil(a) {
+	toggleInteractiveMenu()
+
+	if(a = "SpawnCar")
+		Send {Down 4}{Enter}{Enter}
+	else if(a = "ReturnCar")
+		Send {Down 4}{Enter}{Down 4}{Enter}
+	
+	toggleInteractiveMenu()
+	
+}
+
 
 getItem(i) {
-	openM()
+	toggleInteractiveMenu()
 	if(i = "Armor") {
-		if(playerState = 0)
-			Send {Down}
-		else
-			Send {Down 2}
-		Send {Enter}{Down}{Enter}{Up 3}{Enter}
+		Send {Down 2}{Enter}{Down}{Enter}{Up 3}{Enter}
 	}
 	else if(i = "Snack") {
-		if(playerState = 0)
-			Send {Down}
-		else
-			Send {Down 2}
-		Send {Enter}{Down 2}{Enter 3}
+		Send {Down 2}{Enter}{Down 2}{Enter 3}
 	}
 	else if(i = "Ammo") {
-		if(playerState = 0)
-			Send {Down}
-		else
-			Send {Down 2}
-		Send {Enter}{Down 3}{Enter}{Up}{Enter}
+		Send {Down 2}{Enter}{Down 3}{Enter}
+		while A_Index  <= 8 {
+			Send {Right}{Up}
+			Sleep, %menuDelay%
+			Send {Enter}{Down}
+		}
 	}
-	Send {SC032}
-}
-
-fastHeavyReload() {
-	setkeydelay, %keyMDelay%, %keyMDuration%
-	Send {%specialWeaponKey%}
-	Send {%heavyWeaponKey%}
-}
-
-fastEwo() {
-	openM()
-	Send {Up 2}
-	Send {SC02E down}
-	Send {Enter}
-	Send {SC02E up}
-}
-
-toggleCrosshair() {
-	if(crossHairT = false) {
-		Gui, QuickMacroCrosshair: Show
-		WinActivate, ahk_class grcWindow
-	} else {
-		Gui, QuickMacroCrosshair: Hide
-	}
-	crossHairT := !crossHairT
+	toggleInteractiveMenu()
 }
 
 outfitFix() {
-	openM()
-	
-	if(playerState = 0)
-		Send {Down 2}
-	else
-		Send {Down 3}
-	
-	Send {Enter}{Down 3}{Enter}
-	Send {SC032}
+	toggleInteractiveMenu()
+	Send {Down}{Enter}{Down 3}{Enter}
+	toggleInteractiveMenu()
 }
 
-repeatButton() {
-	if(T = true) {
-		setTimer, loopRepeatButton, off
-	} else {
-		setTimer, loopRepeatButton, on
-	}
-	T := !T
+bringGameIntoFocus() {
+	global IntFocusDelay
+	WinActivate ahk_class grcWindow
+}
+
+
+disconnectFromLobby() {
+	Run, pssuspend gta5.exe ,,Hide
+	Sleep 10000
+	Run, pssuspend -r gta5.exe ,,Hide
+	bringGameIntoFocus()
 }

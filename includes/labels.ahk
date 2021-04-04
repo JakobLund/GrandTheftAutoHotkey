@@ -2,6 +2,9 @@
 ; Copyright (C) 2017 MacMailler
 ; GitHub: https://github.com/MacMailler/QuickMacro
 ;
+; Copyright (C) 2021 Jakob Lund
+; GitHub: https://github.com/JakobLund/GrandTheftAutoHotkey
+;
 
 
 ; Services
@@ -24,19 +27,31 @@ return
 
 ; CEO abilities
 toggleCeoLabel:
-	toggleCeo()
+	if MCState = 0
+		if CEOState = 0
+			ceoAbil("RegisterCEO")
+		else
+			ceoAbil("RetireCEO")
 return
 
-buzzardLabel:
-	ceoAbil("Buzzard")
+; MC abilities
+toggleMCLabel:
+	if CEOState = 0
+		if MCState = 0
+			mcAbil("RegisterMC")
+		else
+			mcAbil("DisbandMC")
 return
 
-ghostLabel:
-	ceoAbil("Gost")
+
+
+; Kosatka abilities
+spawnSparrowLabel:
+	kosatkaAbil("SpawnSparrow")
 return
 
-bullsharkLabel:
-	ceoAbil("Bullshark")
+returnSparrowLabel:
+	kosatkaAbil("ReturnSparrow")
 return
 
 
@@ -53,34 +68,23 @@ ammoLabel:
 	getItem("Ammo")
 return
 
+spawnCarLabel:
+	playerAbil("SpawnCar")
+return
+
+returnCarLabel:
+	playerAbil("ReturnCar")
+return
 
 ; Others
-fastHeavyReloadLabel:
-	fastHeavyReload()
-return
-
-fastEwoLabel:
-	fastEwo()
-return
-
-repeatButtonLabel:
-	repeatButton()
-return
-
-crossHairLabel:
-	toggleCrosshair()
-return
-
 outfitFixLabel:
 	outfitFix()
 return
 
-loopRepeatButton:
-    while(T) {
-		Send {%RepeatButton%}
-		sleep, RepeatButtonDelay
-	}
+disconnectFromLobbyLabel:
+	disconnectFromLobby()
 return
+
 
 activateLabel:
 	init()
@@ -89,3 +93,4 @@ return
 exitLabel:
 	ExitApp
 return
+
