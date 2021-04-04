@@ -52,11 +52,7 @@ phoneUp() {
 
 toggleInteractiveMenu() {
 	Send {%InteractionMKey%}
-
-	if (0 = 1) {
-		Send {Down}
-		Send {Down}
-	} else if (playerState = 1) {
+	if (MCState = 1 || CEOState = 1) {
 		Send {Down}
 	}
 }
@@ -99,7 +95,7 @@ ceoAbil(a) {
 		Send {Down 6}{Enter}{Enter}
 	}
 	else if(a = "RetireCEO"){
-		Send {Enter}{Up}{Enter}{Enter}
+		Send {Up}{Enter}{Up}{Enter}{Enter}
 	}
 	toggleCeo()
 }
@@ -111,7 +107,7 @@ mcAbil(a) {
 		Send {Down 7}{Enter}{Enter}
 	}
 	else if(a = "DisbandMC"){
-		Send {Enter}{Up}{Enter}{Enter}
+		Send {Up}{Enter}{Up}{Enter}{Enter}
 	}
 	toggleMC()
 }
