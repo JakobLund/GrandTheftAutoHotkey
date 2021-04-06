@@ -32,6 +32,11 @@ toggleCeoLabel:
 			ceoAbil("RegisterCEO")
 		else
 			ceoAbil("RetireCEO")
+		
+return
+
+spawnBuzzardLabel:
+	getItem("Buzzard")
 return
 
 ; MC abilities
@@ -83,6 +88,18 @@ return
 
 disconnectFromLobbyLabel:
 	disconnectFromLobby()
+return
+
+instructionsWindowsLabel:
+	showInstructions()
+return
+
+toggleAFKLabel:
+	toggleAFK()
+return
+
+toggleAutoClickerLabel:
+	toggleAutoClicker()
 return
 
 

@@ -14,13 +14,10 @@ loadConf() {
 		IniRead, keyPhoneDelay, %SettingsFile%, Delays, keyPhoneDelay
 		IniRead, keyPhoneDuration, %SettingsFile%, Delays, KeyPhoneDuration
 		IniRead, phoneDelay, %SettingsFile%, Delays, PhoneDelay
+		IniRead, menuAmmoDelay, %SettingsFile%, Delays, MenuAmmoDelay
 		IniRead, menuDelay, %SettingsFile%, Delays, MenuDelay
 		IniRead, keyMDelay, %SettingsFile%, Delays, KeyMDelay
 		IniRead, keyMDuration, %SettingsFile%, Delays, KeyMDuration
-		IniRead, RepeatButtonDelay, %SettingsFile%, Delays, RepeatButtonDelay
-		IniRead, heavyWeaponKey, %SettingsFile%, Keys, HeavyWeaponKey
-		IniRead, specialWeaponKey, %SettingsFile%, Keys, SpecialWeaponKey
-		IniRead, RepeatButton, %SettingsFile%, Keys, RepeatButton
 		IniRead, InteractionMKey, %SettingsFile%, Keys, InteractionMKey
 		
 		IniRead, PegasusKey, %SettingsFile%, Hotkeys, PegasusKey
@@ -36,21 +33,21 @@ loadConf() {
 		IniRead, ReturnCarKey, %SettingsFile%, Hotkeys, ReturnCarKey
 		IniRead, SpawnSparrowKey, %SettingsFile%, Hotkeys, SpawnSparrowKey
 		IniRead, ReturnSparrowKey, %SettingsFile%, Hotkeys, ReturnSparrowKey
+		IniRead, SpawnBuzzardKey, %SettingsFile%, Hotkeys, SpawnBuzzardKey
 		IniRead, OutfitFixKey, %SettingsFile%, Hotkeys, OutfitFixKey
 		IniRead, DisconnectFromLobbyKey, %SettingsFile%, Hotkeys, DisconnectFromLobbyKey
+		IniRead, ToggleAFKKey, %SettingsFile%, Hotkeys, ToggleAFKKey
+		IniRead, ToggleAutoClickerKey, %SettingsFile%, Hotkeys, ToggleAutoClickerKey
 		
 
 	} else {
 		IniWrite, %keyPhoneDelay%, %SettingsFile%, Delays, keyPhoneDelay
 		IniWrite, %keyPhoneDuration%, %SettingsFile%, Delays, KeyPhoneDuration
 		IniWrite, %phoneDelay%, %SettingsFile%, Delays, PhoneDelay
+		IniWrite, %menuAmmoDelay%, %SettingsFile%, Delays, MenuAmmoDelay
 		IniWrite, %menuDelay%, %SettingsFile%, Delays, MenuDelay
 		IniWrite, %keyMDelay%, %SettingsFile%, Delays, KeyMDelay
 		IniWrite, %keyMDuration%, %SettingsFile%, Delays, KeyMDuration
-		IniWrite, %RepeatButtonDelay%, %SettingsFile%, Delays, RepeatButtonDelay
-		IniWrite, %heavyWeaponKey%, %SettingsFile%, Keys, HeavyWeaponKey
-		IniWrite, %specialWeaponKey%, %SettingsFile%, Keys, SpecialWeaponKey
-		IniWrite, %RepeatButton%, %SettingsFile%, Keys, RepeatButton
 		IniWrite, %InteractionMKey%, %SettingsFile%, Keys, InteractionMKey
 		
 		IniWrite, %PegasusKey%, %SettingsFile%, Hotkeys, PegasusKey
@@ -66,7 +63,10 @@ loadConf() {
 		IniWrite, %ReturnCarKey%, %SettingsFile%, Hotkeys, ReturnCarKey
 		IniWrite, %SpawnSparrowKey%, %SettingsFile%, Hotkeys, SpawnSparrowKey
 		IniWrite, %ReturnSparrowKey%, %SettingsFile%, Hotkeys, ReturnSparrowKey
+		IniWrite, %SpawnBuzzardKey%, %SettingsFile%, Hotkeys, SpawnBuzzardKey
 		IniWrite, %OutfitFixKey%, %SettingsFile%, Hotkeys, OutfitFixKey
 		IniWrite, %DisconnectFromLobbyKey%, %SettingsFile%, Hotkeys, DisconnectFromLobbyKey
+		IniWrite, %ToggleAFKKey%, %SettingsFile%, Hotkeys, ToggleAFKKey
+		IniWrite, %ToggleAutoClickerKey%, %SettingsFile%, Hotkeys, ToggleAutoClickerKey
 	}
 }

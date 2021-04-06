@@ -2,10 +2,12 @@
 Speed up your gameplay in GTA Online with these simply and useful macros!
 
 ### Installation
-1. [Download](https://github.com/JakobLund/GrandTheftAutoHotkey/releases) and install latest version
-2. Run GTA Online
-3. Run GrandTheftAutoKey (after opening GTAV window)
-4. Press the "End" key
+1. [Download](https://www.autohotkey.com/) and install AutoHotkey
+1. [Download](https://github.com/JakobLund/GrandTheftAutoHotkey/releases) latest version
+2. Unpack to any place
+3. Run GTA Online
+4. Run GrandTheftAutoKey.ahk (after opening GTAV window)
+5. Press the "End" key
 
 ### Hotkeys
 + End - Enable/Disable the script

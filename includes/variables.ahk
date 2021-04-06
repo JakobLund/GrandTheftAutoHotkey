@@ -7,23 +7,19 @@
 ;
 
 Global hotkeyState := "Off"
-Global playerState := 0
 Global MCState := 0
 Global CEOState := 0
+Global IsAFKActivated := 0
+Global IsAutoClickerActivated := 0
 Global InteractionMKey = "m"
 
 Global keyPhoneDelay := 70
 Global keyPhoneDuration := 100
-Global phoneDelay := 300
+Global phoneDelay := 550
 
-Global menuDelay := 150
+Global menuAmmoDelay := 150
+Global menuDelay := 26
 Global keyMDelay := 36
 Global keyMDuration := 36
-
-Global RepeatButtonDelay := 1000
-Global RepeatButton := "Enter"
-
-Global heavyWeaponKey := 4
-Global specialWeaponKey := 5
 
 Global T := false

@@ -6,7 +6,7 @@
 ; GitHub: https://github.com/JakobLund/GrandTheftAutoHotkey
 ;
 
-Menu, Tray, Tip, QuickMacro`nOff
+Menu, Tray, Tip, GrandTheftAutoHotkey
 
 Menu, Tray, NoStandard
 Menu, Tray, Add, Activate, activateLabel
