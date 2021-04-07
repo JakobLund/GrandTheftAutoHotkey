@@ -59,7 +59,7 @@ toggleInteractiveMenu() {
 	if (MCState = 1 || CEOState = 1) {
 		Send {Down}
 	}
-	Sleep %menuDelay%
+	Sleep %intMenuDelay%
 }
 
 toggleCeo() {
@@ -153,12 +153,12 @@ getItem(i) {
 	toggleInteractiveMenu()
 	if(i = "Armor"){
 		Send {Down 2}{Enter}{Down}{Enter}
-		Sleep %menuDelay%
+		Sleep %intMenuKeyDelay%
 		Send {Up 3}{Enter}
 	}
 	else if(i = "Snack") {
 		Send {Down 2}{Enter}
-		Sleep %menuDelay%
+		Sleep %intMenuKeyDelay%
 		Send {Down 2}{Enter 3}
 	}
 	else if(i = "Ammo"){
@@ -171,7 +171,7 @@ getItem(i) {
 	}
 	else if(i = "Buzzard"){
 		Send {Up}{Enter}{Up 2}{Enter}
-		Sleep %menuDelay%
+		Sleep %intMenuKeyDelay%
 		Send {Down 4}{Enter}
 	}
 

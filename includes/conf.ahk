@@ -15,8 +15,8 @@ loadConf() {
 		IniRead, keyPhoneDuration, %SettingsFile%, Delays, KeyPhoneDuration
 		IniRead, phoneDelay, %SettingsFile%, Delays, PhoneDelay
 		IniRead, menuAmmoDelay, %SettingsFile%, Delays, MenuAmmoDelay
-		IniRead, menuDelay, %SettingsFile%, Delays, MenuDelay
-		IniRead, keyMDelay, %SettingsFile%, Delays, KeyMDelay
+		IniRead, intMenuDelay, %SettingsFile%, Delays, intMenuDelay
+		IniRead, intMenuKeyDelay, %SettingsFile%, Delays, intMenuKeyDelay
 		IniRead, keyMDuration, %SettingsFile%, Delays, KeyMDuration
 		IniRead, InteractionMKey, %SettingsFile%, Keys, InteractionMKey
 		
@@ -45,8 +45,8 @@ loadConf() {
 		IniWrite, %keyPhoneDuration%, %SettingsFile%, Delays, KeyPhoneDuration
 		IniWrite, %phoneDelay%, %SettingsFile%, Delays, PhoneDelay
 		IniWrite, %menuAmmoDelay%, %SettingsFile%, Delays, MenuAmmoDelay
-		IniWrite, %menuDelay%, %SettingsFile%, Delays, MenuDelay
-		IniWrite, %keyMDelay%, %SettingsFile%, Delays, KeyMDelay
+		IniWrite, %intMenuDelay%, %SettingsFile%, Delays, intMenuDelay
+		IniWrite, %intMenuKeyDelay%, %SettingsFile%, Delays, intMenuKeyDelay
 		IniWrite, %keyMDuration%, %SettingsFile%, Delays, KeyMDuration
 		IniWrite, %InteractionMKey%, %SettingsFile%, Keys, InteractionMKey
 		

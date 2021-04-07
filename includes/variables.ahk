@@ -18,8 +18,7 @@ Global keyPhoneDuration := 100
 Global phoneDelay := 550
 
 Global menuAmmoDelay := 150
-Global menuDelay := 26
-Global keyMDelay := 36
-Global keyMDuration := 36
+Global intMenuDelay := 26
+Global intMenuKeyDelay := 36
 
 Global T := false
