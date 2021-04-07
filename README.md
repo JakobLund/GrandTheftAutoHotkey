@@ -2,7 +2,6 @@
 Speed up your gameplay in GTA Online with these simply and useful macros!
 
 ### Installation
-1. [Download](https://www.autohotkey.com/) and install AutoHotkey
 1. [Download](https://github.com/JakobLund/GrandTheftAutoHotkey/releases) latest version
 2. Unpack to any place
 3. Run GTA Online
@@ -20,12 +19,16 @@ Speed up your gameplay in GTA Online with these simply and useful macros!
 + Num0 + Num7 - Call Mechanic
 + Num0 + Num8 - Call Mors Insurance
 + Num0 + Num9 - Call Pegasus
++ Num0 + NumAdd - Spawn CEO Buzzard
 + NumAdd - Toggle MC President
 + NumDiv - Toggle CEO Mode
 + NumSub - Buy ammo for all weapons
 + NumDot - Eat two snacks from the second place in your inventory
 + RCtrl & RShift - Outfit fix
-+ Num0 + NumSub - Force solo lobby
++ Num0 + Del - Force solo lobby
++ Num0 + Up - Toggle AFK mode
++ Num0 + Down - Toggle Auto Clicker
++ F8 - Help window with all shortcuts
 
 ### Notes
 + All keys can be changed in the file `GrandTheftAutoHotkey.ini`

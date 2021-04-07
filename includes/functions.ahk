@@ -219,7 +219,11 @@ NumDiv - Toggle CEO Mode
 NumSub - Buy ammo for all weapons
 NumDot - Eat two snacks from the second place in your inventory
 RCtrl & RShift - Outfit fix
-Num0 + NumSub - Force solo lobby
+Num0 + Del - Force solo lobby
+Num0 + Up - Toggle AFK mode
+Num0 + Down - Toggle Auto Clicker
+F8 - Help window with all shortcuts
+
 			)
 	msgbox, 0x40, GrandTheftAutoHotkey, %instructions%
 }
