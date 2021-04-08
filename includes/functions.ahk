@@ -12,10 +12,12 @@ init() {
 		Menu, Tray, Tip, GrandTheftAutoHotkey %hotkeyState%
 		setHotkeyState(hotkeyState)
 		
-		if (hotkeyState = "On")
+		if (hotkeyState = "On"){
 			Menu, Tray, Rename, Activate, Deactivate
-		else
+		}
+		else{
 			Menu, Tray, Rename, Deactivate, Activate
+		}
 	} else {
 		msgbox, 0x40, GrandTheftAutoHotkey, GTAV is not running!
 	}
@@ -63,40 +65,50 @@ toggleInteractiveMenu() {
 }
 
 toggleCeo() {
-	if(CEOState = 0)
+	if(CEOState = 0){
 		CEOState := 1
-	else
+	}
+	else{
 		CEOState := 0
+	}
 }
 
 toggleMC() {
-	if(MCState = 0)
+	if(MCState = 0){
 		MCState := 1
-	else
+	}
+	else{
 		MCState := 0
+	}
 }
 
 callService(s) {
 	phoneUp()
 	Send {Right}{Up}{Enter}
 	
-	if(s = "Pegasus")
+	if(s = "Pegasus"){
 		Send {Up 6}{Enter}
-	else if(s = "MorsMutual")
+	}
+	else if(s = "MorsMutual"){
 		Send {Up 9}{Enter}
-	else if(s = "Mechanic")
+	}
+	else if(s = "Mechanic"){
 		Send {Up 11}{Enter}
-	else if(s = "Lester")
+	}
+	else if(s = "Lester"){
 		Send {Up 15}{Enter}
+	}
 }
 
 ceoAbil(a) {
 	toggleInteractiveMenu()
 	
-	if(a = "RegisterCEO")
+	if(a = "RegisterCEO"){
 		Send {Down 6}{Enter}{Enter}
-	else if(a = "RetireCEO")
+	}
+	else if(a = "RetireCEO"){
 		Send {Up}{Enter}{Up}{Enter}{Enter}
+	}
 
 	toggleCeo()
 }
@@ -104,10 +116,12 @@ ceoAbil(a) {
 mcAbil(a) {
 	toggleInteractiveMenu()
 
-	if(a = "RegisterMC")
+	if(a = "RegisterMC"){
 		Send {Down 7}{Enter}{Enter}
-	else if(a = "DisbandMC")
+	}
+	else if(a = "DisbandMC"){
 		Send {Up}{Enter}{Up}{Enter}{Enter}
+	}
 
 	toggleMC()
 }

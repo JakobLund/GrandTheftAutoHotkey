@@ -3,9 +3,9 @@ Speed up your gameplay in GTA Online with these simply and useful macros!
 
 ### Installation
 1. [Download](https://github.com/JakobLund/GrandTheftAutoHotkey/releases) latest version
-2. Unpack to any place
+2. Install it
 3. Run GTA Online
-4. Run GrandTheftAutoKey.ahk (after opening GTAV window)
+4. Run GrandTheftAutoKey (after opening GTAV window)
 5. Press the "End" key
 
 ### Hotkeys
@@ -31,5 +31,7 @@ Speed up your gameplay in GTA Online with these simply and useful macros!
 + F8 - Help window with all shortcuts
 
 ### Notes
-+ All keys can be changed in the file `GrandTheftAutoHotkey.ini`
++ All keys can be changed in the file `GrandTheftAutoHotkey.ini`. Use AutohotKeys guide for names of keys.
++ If you want the interaction menu to work while being CEO or MC president then you'll have to register with this program. This way it will know how to navigate the menu.
++ Interactive menu does not work while being inside most properties, only the phone will work.
 + If you want to force a solo lobby you need to have [pssuspend.exe](https://docs.microsoft.com/en-us/sysinternals/downloads/pssuspend) added to your path
