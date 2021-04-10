@@ -1,4 +1,4 @@
-# GrandTheftAutoKey
+# GrandTheftAutoHotkey
 Speed up your gameplay in GTA Online with these simply and useful macros!
 
 ### Installation
