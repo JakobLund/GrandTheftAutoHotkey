@@ -166,17 +166,17 @@ playerAbil(a) {
 getItem(i) {
 	toggleInteractiveMenu()
 	if(i = "Armor"){
-		Send {Down 2}{Enter}{Down}{Enter}
+		Send {Down 2}{Enter}{Down 3}{Enter}
 		Sleep %intMenuKeyDelay%
 		Send {Up 3}{Enter}
 	}
 	else if(i = "Snack") {
 		Send {Down 2}{Enter}
 		Sleep %intMenuKeyDelay%
-		Send {Down 2}{Enter 3}
+		Send {Down 4}{Enter 3}
 	}
 	else if(i = "Ammo"){
-		Send {Down 2}{Enter}{Down 3}{Enter}
+		Send {Down 2}{Enter}{Down 5}{Enter}
 		while A_Index  <= 8 {
 			Send {Right}{Up}
 			Sleep, %menuAmmoDelay%
@@ -189,9 +189,6 @@ getItem(i) {
 		Send {Down 4}{Enter}
 	}
 
-
-
-	
 	toggleInteractiveMenu()
 }
 

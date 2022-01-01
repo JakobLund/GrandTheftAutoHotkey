@@ -19,11 +19,10 @@ Speed up your gameplay in GTA Online with these simply and useful macros!
 + Num0 + Num7 - Call Mechanic
 + Num0 + Num8 - Call Mors Insurance
 + Num0 + Num9 - Call Pegasus
-+ Num0 + NumAdd - Spawn CEO Buzzard
-+ NumAdd - Toggle MC President
++ NumMult - Toggle MC President
 + NumDiv - Toggle CEO Mode
 + NumSub - Buy ammo for all weapons
-+ NumDot - Eat two snacks from the second place in your inventory
++ NumDot - Eat a snack
 + RCtrl & RShift - Outfit fix
 + Num0 + Del - Force solo lobby
 + Num0 + Up - Toggle AFK mode
